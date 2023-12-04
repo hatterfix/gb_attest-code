@@ -3,28 +3,34 @@
 // При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
 
-// Функция CutArray считает количество строк массива , длина которых меньше, либо равна 3 символам.
-    static string[] CutArray(string[] array)
+// Функция CutArray сначала считает количество строк массива , длина которых меньше, либо равна 3 символам.
+
+
+    static string[] CutArray(string[] inputArray)
     {
+        // Считаем элементы массива - строки, длина которых <= 3
         int count = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < inputArray.Length; i++)
         {
-            if (array[i].Length <= 3)
+            if (inputArray[i].Length <= 3)
             {
                 count++;
             }
         }
 
-        string[] result = new string[count];
+        // Создаём новый массив, размерности = count
+        string[] outputArray = new string[count];
+
+        // Заполняем новый массив строками, длина которых <= 3
         int index = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < inputArray.Length; i++)
         {
-            if (array[i].Length <= 3)
+            if (inputArray[i].Length <= 3)
             {
-                result[index] = array[i];
+                outputArray[index] = inputArray[i];
                 index++;
             }
         }
 
-        return result;
+        return outputArray;
     }
