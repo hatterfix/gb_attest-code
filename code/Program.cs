@@ -2,3 +2,29 @@
 // Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. 
 // При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
+
+// Функция CutArray считает количество строк массива , длина которых меньше, либо равна 3 символам.
+    static string[] CutArray(string[] array)
+    {
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i].Length <= 3)
+            {
+                count++;
+            }
+        }
+
+        string[] result = new string[count];
+        int index = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i].Length <= 3)
+            {
+                result[index] = array[i];
+                index++;
+            }
+        }
+
+        return result;
+    }
