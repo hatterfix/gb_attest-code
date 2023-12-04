@@ -6,7 +6,7 @@
 // Функция CutArray сначала считает количество строк массива , длина которых меньше, либо равна 3 символам.
 
 
-    static string[] CutArray(string[] inputArray)
+    static string[] RecreateArray(string[] inputArray)
     {
         // Считаем элементы массива - строки, длина которых <= 3
         int count = 0;
@@ -34,3 +34,19 @@
 
         return outputArray;
     }
+
+// Функция для вывода массива
+void arrayPrint(string[] array)
+{
+     System.Console.WriteLine("[" + string.Join(", ", array) + "]");
+}
+    //-------------------------------------------------------------------
+
+    Console.WriteLine("Введите элементы массива через запятую:");
+    string? input = Console.ReadLine();
+    string[] array = input.Split(',');
+    string[] result = RecreateArray(array);
+
+    Console.WriteLine($"Результат:");
+    arrayPrint(RecreateArray(array));
+
